@@ -4,8 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main page</title>
+     <!-- default style -->
+    <link rel="stylesheet" href="style.css">
+    <!-- dasaiUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <!-- font awosome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <!-- tailwind css -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font awosome cdn -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
-    
+<body class="h-screen">
+    <header>
+        <section class="header_section  min-h-1/2 flex justify-between items-center w-lg m-auto my-5 border-b-1 border-[#ddd] p-3">
+            <div class="flex">
+                <img src="./assets/Group.png" class="h-[50px] ml-2" alt="">
+                <div class="header-container ml-3">
+                    <h2 class="font-bold">$45000</h2>
+                    <p class="font-light">Available Balance</p>
+                </div>
+            </div>
+            <div>
+                <button class="btn mr-4 mx-3"><span class="reverse"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>Log Out</button>
+            </div>
+        </section>
+    </header>
 </body>
 </html>
