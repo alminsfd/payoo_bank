@@ -9,8 +9,8 @@ btnLogin.addEventListener("click",function(event){
     let loginNumberConvert=parseInt(loginNumber)
     let loginPinConvert=parseInt(loginPin)
     if(loginNumberConvert===mobileNumber&&loginPinConvert===pinNumber){
-        console.log("all matched")
+        window.location.href="./main.html"
     }else{
-        console.log("invalid")
+       alert("Invalid Login Info")
     }
 })
