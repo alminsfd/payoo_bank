@@ -30,7 +30,8 @@ addMoneybtn.addEventListener("click",function(e){
     document.getElementById("money-add").value=""
     document.getElementById("pin").value=""
     document.getElementById("bank").value ="Select A Bank"
-
-
-
+})
+// login out
+document.getElementById("log-out").addEventListener("click",function(){
+    window.location.href="./index.html"
 })
