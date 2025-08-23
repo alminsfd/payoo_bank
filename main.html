@@ -23,7 +23,7 @@
             <div class="flex">
                 <img src="./assets/Group.png" class="h-[50px] ml-2" alt="">
                 <div class="header-container ml-3">
-                    <h2 class="font-bold">$45000</h2>
+                    <h2 class="font-bold">$ <span id="span">45000</span></h2>
                     <p class="font-light">Available Balance</p>
                 </div>
             </div>
@@ -86,7 +86,7 @@
             <form class="mx-2 mt-4 bg-white p-4 shadow-md border-[#ddd] border-1 rounded-2xl">
                 <div class="mt-5">
                     <label class="font-semibold text-lg">Select A Bank</label>
-                    <select class="select select-ghost border-[#ddd] border-1 rounded-2xl mt-3">
+                    <select id="bank" class="select select-ghost border-[#ddd] border-1 rounded-2xl mt-3">
                     <option disabled selected>Select A Bank</option>
                     <option>Brac Bank</option>
                     <option>Dhaka Bank PLC</option>
@@ -95,17 +95,17 @@
                 </div>
                 <div class="mt-5">
                     <label class="font-semibold text-lg">Bank Account Number</label>
-                    <input type="number"  placeholder="Enter 11 digit account number" class="input input-ghost bg-[#F4F5F7] border-[#ddd] rounded-2xl mt-2" />
+                    <input id="acount-number" type="number"  placeholder="Enter 11 digit account number" class="input input-ghost bg-[#F4F5F7] border-[#ddd] rounded-2xl mt-2" />
                 </div>
                 <div class="mt-5">
                     <label class="font-semibold text-lg">Amount to Add</label>
-                    <input type="number"  placeholder="Add Amount to withdraw" class="input input-ghost bg-[#F4F5F7] border-[#ddd] rounded-2xl mt-2" />
+                    <input id="money-add" type="number"  placeholder="Add Amount to withdraw" class="input input-ghost bg-[#F4F5F7] border-[#ddd] rounded-2xl mt-2" />
                 </div>
                 <div class="mt-5">
-                    <label class="font-semibold text-lg">Pin Number</label>
-                    <input type="number"  placeholder="Enter 4 digit pin number" class="input input-ghost bg-[#F4F5F7] border-[#ddd] rounded-2xl mt-2" />
+                    <label  class="font-semibold text-lg">Pin Number</label>
+                    <input id="pin" type="number"  placeholder="Enter 4 digit pin number" class="input input-ghost bg-[#F4F5F7] border-[#ddd] rounded-2xl mt-2" />
                 </div>
-                <button  class="btn bg-[#0874F2]  hover:bg-[#0465d3] mt-4 w-[329px] rounded-2xl text-white text-lg p-5">Add Money</button>
+                <button id="Mone-add" class="btn bg-[#0874F2]  hover:bg-[#0465d3] mt-4 w-[329px] rounded-2xl text-white text-lg p-5">Add Money</button>
             </form>
         </section>
         <section class="changeable_footer h-screen max-w-lg mx-auto hidden  ">
