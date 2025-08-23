@@ -12,5 +12,8 @@ btnLogin.addEventListener("click",function(event){
         window.location.href="./main.html"
     }else{
        alert("Invalid Login Info")
+       return
     }
+    document.getElementById("number").value=""
+    document.getElementById("pin").value=""
 })
