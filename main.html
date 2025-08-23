@@ -81,7 +81,7 @@
 
     </main>
     <footer>
-        <section class="changeable_footer h-screen max-w-lg mx-auto  ">
+        <section class="changeable_footer h-screen max-w-lg mx-auto hidden ">
             <h1 class="font-extrabold text-2xl ml-4">Add Money</h1>
             <form class="mx-2 mt-4 bg-white p-4 shadow-md border-[#ddd] border-1 rounded-2xl">
                 <div class="mt-5">
@@ -108,6 +108,25 @@
                 <button  class="btn bg-[#0874F2]  hover:bg-[#0465d3] mt-4 w-[329px] rounded-2xl text-white text-lg p-5">Add Money</button>
             </form>
         </section>
+        <section class="changeable_footer h-screen max-w-lg mx-auto  ">
+            <h1 class="font-extrabold text-2xl ml-4">Cash Out</h1>
+            <form class="mx-2 mt-4 bg-white p-4 shadow-md border-[#ddd] border-1 rounded-2xl">
+                <div class="mt-5">
+                    <label class="font-semibold text-lg">Agent Number</label>
+                    <input type="number" id="number" placeholder="Enter 11 digit  number" class="input input-ghost bg-[#F4F5F7] border-[#ddd] rounded-2xl mt-2" />
+                </div>
+                <div class="mt-5">
+                    <label class="font-semibold text-lg">Amount</label>
+                    <input type="number" id="number" placeholder="Enter amount to withdraw" class="input input-ghost bg-[#F4F5F7] border-[#ddd] rounded-2xl mt-2" />
+                </div>
+                <div class="mt-5">
+                    <label class="font-semibold text-lg">Pin Number</label>
+                    <input type="number" id="number" placeholder="Enter 4 digit pin number" class="input input-ghost bg-[#F4F5F7] border-[#ddd] rounded-2xl mt-2" />
+                </div>
+                <button  class="btn bg-[#0874F2]  hover:bg-[#0465d3] mt-4 w-[329px] rounded-2xl text-white text-lg p-5">Withdraw Money</button>
+            </form>
+        </section>
+
     </footer>
 </body>
 </html>
