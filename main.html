@@ -39,7 +39,7 @@
                 <p class="text-[#08080880] ">Enjoy easy and convenient financial services with us. Cashout charge is low and.</p>
             </div>
             <div class=" mt-4 grid grid-cols-3 grid-rows-2 gap-3 p-6 rounded-2xl bg-[#fff] shadow-sm ">
-                <div class=" chanbility min-h-[90px]  border-[#0808081a] border-1 rounded-2xl flex justify-center items-center bg-white">
+                <div id="add-money" class=" chanbility min-h-[90px]  border-[#0808081a] border-1 rounded-2xl flex justify-center items-center bg-white">
                     <div>
                     <img src="./assets/wallet1.png" class=" mx-auto" alt="">
                     <p class="text-sm text-[#080808b3] text-center">Add Money</p>
@@ -81,7 +81,7 @@
 
     </main>
     <footer>
-        <section class="changeable_footer h-screen max-w-lg mx-auto hidden ">
+        <section id="money-popup" class="changeable_footer h-screen max-w-lg mx-auto hidden">
             <h1 class="font-extrabold text-2xl ml-4">Add Money</h1>
             <form class="mx-2 mt-4 bg-white p-4 shadow-md border-[#ddd] border-1 rounded-2xl">
                 <div class="mt-5">
@@ -228,7 +228,7 @@
             </div>
             
         </section>
-        <section >
+        <section id="history">
             <div class="flex justify-between items-center mx-5">
                 <h3 class="font-semibold text-lg text-[#080808e6]">Latest Payment</h3>
                 <p class="text-sm text-[#08080880]">View All</p>
@@ -276,5 +276,6 @@
             
         </section>
     </footer>
+    <script src="main.js"></script>
 </body>
 </html>
