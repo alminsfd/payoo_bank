@@ -12,7 +12,6 @@ addMoney.addEventListener("click",function(){
 let addMoneybtn=document.getElementById("Mone-add")
 addMoneybtn.addEventListener("click",function(e){
     e.preventDefault();
-    let bank=document.getElementById("bank").value 
     let bankNumber=document.getElementById("acount-number").value
     let moneyAdd=parseInt(document.getElementById("money-add").value)
     let getpinNumber=parseInt(document.getElementById("pin").value)
@@ -27,5 +26,11 @@ addMoneybtn.addEventListener("click",function(e){
     }
     let totalMoney=lastMoney+moneyAdd
     document.getElementById("span").innerText=totalMoney
+    document.getElementById("acount-number").value=""
+    document.getElementById("money-add").value=""
+    document.getElementById("pin").value=""
+    document.getElementById("bank").value ="Select A Bank"
+
+
 
 })
