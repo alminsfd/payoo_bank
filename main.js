@@ -2,6 +2,7 @@
 const bonuscopens= ["Payo50","Payo100","Payo150","Payo200"]
 const bonusAmount=[50,100,150,200]
 let transhistry=[]
+const pinNumber=847986;
 
 
 //section selection
@@ -142,17 +143,35 @@ function setmoney(value){
 // add money function
 addMoneybtn.addEventListener("click",function(e){
     e.preventDefault();
+    if(getinputvalue("pin")!==pinNumber){
+        alert("Wrong Pin Number")
+        return
+    }
+    else if(document.getElementById("acount-number").value.length!=11){
+        alert("Invalid Account Number") 
+        return
+    }
      const totalmoney=lastmoney()+getinputvalue("money-add")
      setmoney(totalmoney)
-     
      let data={
         type:"Add Money",
         amount:getinputvalue("money-add"),
         date:new Date().toLocaleString()
     }
      transhistry.push(data)
+     
+  document.getElementById("acount-number").value=""
+  document.getElementById("money-add").value=""
+  document.getElementById("pin").value=""
+  document.getElementById("bank").value ="Select A Bank"
 
 })
+//substruct money function
+
+
+
+
+
 // cashout money function
 
 castoutbtn.addEventListener("click",function(e){
