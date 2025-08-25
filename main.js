@@ -1,3 +1,9 @@
+//fix data
+const bonuscopens= ["Payo50","Payo100","Payo150","Payo200"]
+const bonusAmount=[50,100,150,200]
+
+
+
 //section selection
 let addMoneySection=document.getElementById("money-section")
 let cashoutSection=document.getElementById("castout-section")
@@ -54,7 +60,7 @@ transectionHistory.addEventListener("click",function(e){
 });
 
 
-//btn color change function
+//btn of section color change function
 
 function btncolorchange(id){
 
@@ -90,26 +96,67 @@ transectionHistory.addEventListener("click",function(e){
     btncolorchange(transectionHistory)
 });
 
+// btn section in form      
 
+let addMoneybtn=document.getElementById("Money-add")
+let castoutbtn=document.getElementById("castout-formbtn")
+let transferbtn=document.getElementById("transfer-add") 
+let getbonusbtn=document.getElementById("getbonus-formbtn")
+let paybillbtn=document.getElementById("paybill-add")
 
+//get input value function
+function getinputvalue(id){
+    return parseInt(document.getElementById(id).value)
+}
+//last money function
+function lastmoney(){
+    return parseInt(document.getElementById("span").innerText)
+}
+//set money function
+function setmoney(value){
+    return document.getElementById("span").innerText=value
+}
+// add money function
+addMoneybtn.addEventListener("click",function(e){
+    e.preventDefault();
+     const totalmoney=lastmoney()+getinputvalue("money-add")
+     setmoney(totalmoney)
+})
+// cashout money function
 
+castoutbtn.addEventListener("click",function(e){
+    e.preventDefault();
+    const totalmoney=lastmoney()-getinputvalue("money-out")
+    setmoney(totalmoney)
+})
 
+// transfer money function
+transferbtn.addEventListener("click",function(e){   
+    e.preventDefault();
+    const totalmoney=lastmoney()-getinputvalue("money-transfer")
+    setmoney(totalmoney)
+})
+//get bonus function
+getbonusbtn.addEventListener("click",function(e){
+    e.preventDefault();
+    const getcoupon=document.getElementById("get-bonus").value
+    const couponindex=bonuscopens.indexOf(getcoupon)
+    if(couponindex!==-1){
+        const totalmoney=lastmoney()+bonusAmount[couponindex]
+        setmoney(totalmoney)
+    }
+    else{
+        alert("Invalid Coupon")
+    }
+})
+//pay bill function
+paybillbtn.addEventListener("click",function(e){
+    e.preventDefault();
+    const totalmoney=lastmoney()-getinputvalue("money-pay")
+    setmoney(totalmoney)
+})
 
-
-
-
-
-
-
-
-// add money function       
-
-
-
-
-
-
-
+//trabsection history function
 
 
 
