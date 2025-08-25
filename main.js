@@ -1,7 +1,6 @@
 //section selection
 let addMoneySection=document.getElementById("money-section")
 let cashoutSection=document.getElementById("castout-section")
-console.log(cashoutSection)
 let transferMoneySection=document.getElementById("transfermoney-section")
 let getBonusSection=document.getElementById("getbonus-section")
 let payBillSection=document.getElementById("paybill-section")
@@ -12,7 +11,6 @@ let transectionSection=document.getElementById("transecton-section")
 //btn-seclection
 let addMoney=document.getElementById("money-btn")
 let cashoutMoney=document.getElementById("castout-btn")
-console.log(cashoutMoney)
 let transferMoney=document.getElementById("transfermoney-btn")
 let getBonus=document.getElementById("getbonus-btn")
 let payBill=document.getElementById("paybill-btn")
