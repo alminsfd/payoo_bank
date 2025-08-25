@@ -1,7 +1,7 @@
 //fix data
 const bonuscopens= ["Payo50","Payo100","Payo150","Payo200"]
 const bonusAmount=[50,100,150,200]
-
+let transhistry=[]
 
 
 //section selection
@@ -93,7 +93,30 @@ payBill.addEventListener("click",function(e){
 });
 transectionHistory.addEventListener("click",function(e){    
     e.preventDefault();
-    btncolorchange(transectionHistory)
+    btncolorchange(transectionHistory);
+    histary=document.getElementById("money-histry")
+    histary.innerHTML=""
+    
+    for(let transobj of transhistry){
+        let div=document.createElement("div")
+        div.innerHTML=`
+        <div  class="flex justify-between items-center mx-5 my-4 border-[#ddd] border-1 p-3 rounded-2xl">
+                <div class="flex justify-baseline items-center">
+                    <img src="./assets/wallet1.png" class="mx-2 bg-[#0808080d] rounded-full p-2" alt="">
+                    <div>
+                        <h4 class="text-[#080808b3] text-lg font-semibold">${transobj.type}</h4>
+                        <p class="text-[12px] text-[#080808b3]">amount money: ${transobj. amount}</p>
+                        <p class="text-[12px] text-[#080808b3]">${transobj.date}</p>
+                    </div>
+                </div>
+                <span><i class="fa-solid fa-ellipsis-vertical text-[#080808b3]"></i></span>
+            </div>
+           `
+       histary.appendChild(div)
+
+    }
+    
+
 });
 
 // btn section in form      
@@ -121,6 +144,14 @@ addMoneybtn.addEventListener("click",function(e){
     e.preventDefault();
      const totalmoney=lastmoney()+getinputvalue("money-add")
      setmoney(totalmoney)
+     
+     let data={
+        type:"Add Money",
+        amount:getinputvalue("money-add"),
+        date:new Date().toLocaleString()
+    }
+     transhistry.push(data)
+
 })
 // cashout money function
 
@@ -128,6 +159,12 @@ castoutbtn.addEventListener("click",function(e){
     e.preventDefault();
     const totalmoney=lastmoney()-getinputvalue("money-out")
     setmoney(totalmoney)
+    let data={
+        type:"Cash Out",
+        amount:getinputvalue("money-out"),
+        date:new Date().toLocaleString()
+    }
+     transhistry.push(data)
 })
 
 // transfer money function
@@ -135,6 +172,12 @@ transferbtn.addEventListener("click",function(e){
     e.preventDefault();
     const totalmoney=lastmoney()-getinputvalue("money-transfer")
     setmoney(totalmoney)
+    let data={
+        type:"Transfer Money",
+        amount:getinputvalue("money-transfer"),
+        date:new Date().toLocaleString()
+    }
+     transhistry.push(data)
 })
 //get bonus function
 getbonusbtn.addEventListener("click",function(e){
@@ -148,15 +191,28 @@ getbonusbtn.addEventListener("click",function(e){
     else{
         alert("Invalid Coupon")
     }
+    let data={
+        type:"Get Bonus",
+        amount:couponindex!==-1?bonusAmount[couponindex]:0,
+        date:new Date().toLocaleString()
+    }
+    transhistry.push(data)
+    
 })
 //pay bill function
 paybillbtn.addEventListener("click",function(e){
     e.preventDefault();
     const totalmoney=lastmoney()-getinputvalue("money-pay")
     setmoney(totalmoney)
+    let data={
+        type:"Pay Bill",
+        amount:getinputvalue("money-pay"),
+        date:new Date().toLocaleString()
+    }
+    transhistry.push(data)
 })
 
-//trabsection history function
+
 
 
 
