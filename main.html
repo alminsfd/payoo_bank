@@ -35,41 +35,41 @@
     <main>
         <section class="banner_section mt-4 p-4">
             <div class="main_content ml-4">
-                <h3 class="font-bold text-3xl text-[#080808] ">🔥 Welcome to Payooo!</h3>
-                <p class="text-[#08080880] ">Enjoy easy and convenient financial services with us. Cashout charge is low and.</p>
+                <h3 class="font-bold text-3xl text-[#080808] text-center ">🔥 Welcome to Payooo!</h3>
+                <p class="text-[#08080880] text-center">Enjoy easy and convenient financial services with us. Cashout charge is low and.</p>
             </div>
-            <div class=" mt-4 grid grid-cols-3 grid-rows-2 gap-3 p-6 rounded-2xl bg-[#fff] shadow-sm ">
-                <div id="add-money" class=" chanbility min-h-[90px]  border-[#0808081a] border-1 rounded-2xl flex justify-center items-center bg-white">
-                    <div>
+            <div class=" mt-4 grid grid-cols-3 grid-rows-2 gap-3 p-6 rounded-2xl bg-[#fff] shadow-sm max-w-lg mx-auto">
+                <div id="money-btn" class=" chanbility min-h-[90px]  border-[#0808081a] border-1 rounded-2xl flex justify-center items-center bg-white">
+                    <div >
                     <img src="./assets/wallet1.png" class=" mx-auto" alt="">
                     <p class="text-sm text-[#080808b3] text-center">Add Money</p>
                     </div>
                 </div>
-                <div class="chanbility min-h-[90px]  border-[#0808081a] border-1 rounded-2xl flex justify-center items-center bg-white">
+                <div id="castout-btn" class="chanbility min-h-[90px]  border-[#0808081a] border-1 rounded-2xl flex justify-center items-center bg-white">
                     <div>
                     <img src="./assets/send1.png" class=" mx-auto" alt="">
                     <p class="text-sm text-[#080808b3] text-center">Cashout</p>
                     </div>
                 </div>
-                <div class="chanbility min-h-[90px]  border-[#0808081a] border-1 rounded-2xl flex justify-center items-center bg-white">
+                <div id="transfermoney-btn" class="chanbility min-h-[90px]  border-[#0808081a] border-1 rounded-2xl flex justify-center items-center bg-white">
                     <div>
                     <img src="./assets/money1.png" class=" mx-auto" alt="">
                     <p class="text-sm text-[#080808b3] text-center">Transfer Money</p>
                     </div>
                 </div>
-                <div class="chanbility min-h-[90px]  border-[#0808081a] border-1 rounded-2xl flex justify-center items-center bg-white">
+                <div id="getbonus-btn" class="chanbility min-h-[90px]  border-[#0808081a] border-1 rounded-2xl flex justify-center items-center bg-white">
                     <div>
                     <img src="./assets/bonus1.png" class=" mx-auto" alt="">
                     <p class="text-sm text-[#080808b3] text-center">Get Bonus</p>
                     </div>
                 </div>
-                <div class="chanbility min-h-[90px]  border-[#0808081a] border-1 rounded-2xl flex justify-center items-center bg-white">
+                <div id="paybill-btn" class="chanbility min-h-[90px]  border-[#0808081a] border-1 rounded-2xl flex justify-center items-center bg-white">
                     <div>
                     <img src="./assets/purse1.png" class=" mx-auto" alt="">
                     <p class="text-sm text-[#080808b3] text-center">Pay Bill</p>
                     </div>
                 </div>
-                <div class="chanbility min-h-[90px]  border-[#0808081a] border-1 rounded-2xl flex justify-center items-center bg-white">
+                <div id="transecton-btn" class="chanbility min-h-[90px]  border-[#0808081a] border-1 rounded-2xl flex justify-center items-center bg-white">
                     <div>
                     <img src="./assets/transaction1.png" class=" mx-auto" alt="">
                     <p class="text-sm text-[#080808b3] text-center">Transactions</p>
@@ -78,10 +78,9 @@
                 
             </div>
         </section>
-
     </main>
     <footer>
-        <section id="money-popup" class="changeable_footer h-screen max-w-lg mx-auto hidden">
+        <section id="money-section" class="changeable_footer h-screen max-w-lg mx-auto hidden">
             <h1 class="font-extrabold text-2xl ml-4">Add Money</h1>
             <form class="mx-2 mt-4 bg-white p-4 shadow-md border-[#ddd] border-1 rounded-2xl">
                 <div class="mt-5">
@@ -108,7 +107,7 @@
                 <button id="Mone-add" class="btn bg-[#0874F2]  hover:bg-[#0465d3] mt-4 w-[329px] rounded-2xl text-white text-lg p-5">Add Money</button>
             </form>
         </section>
-        <section class="changeable_footer h-screen max-w-lg mx-auto hidden  ">
+        <section id="castout-section" class="changeable_footer h-screen max-w-lg mx-auto hidden ">
             <h1 class="font-extrabold text-2xl ml-4">Cash Out</h1>
             <form class="mx-2 mt-4 bg-white p-4 shadow-md border-[#ddd] border-1 rounded-2xl">
                 <div class="mt-5">
@@ -126,7 +125,7 @@
                 <button  class="btn bg-[#0874F2]  hover:bg-[#0465d3] mt-4 w-[329px] rounded-2xl text-white text-lg p-5">Withdraw Money</button>
             </form>
         </section>
-        <section class="changeable_footer h-screen max-w-lg mx-auto hidden  ">
+        <section id="transfermoney-section" class="changeable_footer h-screen max-w-lg mx-auto hidden ">
             <h1 class="font-extrabold text-2xl ml-4">Transfer Money</h1>
             <form class="mx-2 mt-4 bg-white p-4 shadow-md border-[#ddd] border-1 rounded-2xl">
                 <div class="mt-5">
@@ -144,7 +143,7 @@
                 <button  class="btn bg-[#0874F2]  hover:bg-[#0465d3] mt-4 w-[329px] rounded-2xl text-white text-lg p-5">Send</button>
             </form>
         </section>
-        <section class="changeable_footer h-screen max-w-lg mx-auto  hidden ">
+        <section id="getbonus-section" class="changeable_footer h-screen max-w-lg mx-auto  hidden ">
             <h1 class="font-extrabold text-2xl ml-4">Get Bonus</h1>
             <form class="mx-2 mt-4 bg-white p-4 shadow-md border-[#ddd] border-1 rounded-2xl">
                 <div class="mt-5">
@@ -154,7 +153,7 @@
                 <button  class="btn bg-[#0874F2]  hover:bg-[#0465d3] mt-4 w-[329px] rounded-2xl text-white text-lg p-5">Get Bonus</button>
             </form>
         </section>
-        <section class="changeable_footer h-screen max-w-lg mx-auto  hidden">
+        <section id="paybill-section" class="changeable_footer h-screen max-w-lg mx-auto hidden">
             <h1 class="font-extrabold text-2xl ml-4">Pay Bill</h1>
             <form class="mx-2 mt-4 bg-white p-4 shadow-md border-[#ddd] border-1 rounded-2xl">
                 <div class="mt-5">
@@ -181,7 +180,7 @@
                 <button  class="btn bg-[#0874F2]  hover:bg-[#0465d3] mt-4 w-[329px] rounded-2xl text-white text-lg p-5">Pay Now</button>
             </form>
         </section>
-        <section class="hidden">
+        <section id="transecton-section" class="max-w-lg m-auto my-3 border-t-1 border-[#ddd] pt-3 pb-10 changeable_footer h-screen hidden ">
             <div class="flex justify-between items-center mx-5">
                 <h3 class="font-semibold text-lg text-[#080808e6]">Transaction History</h3>
                 <p class="text-sm text-[#08080880]">View All</p>
@@ -228,12 +227,13 @@
             </div>
             
         </section>
-        <section id="history">
+        <!-- ignore -->
+        <!-- <section id="history" class="hidden ">
             <div class="flex justify-between items-center mx-5">
                 <h3 class="font-semibold text-lg text-[#080808e6]">Latest Payment</h3>
                 <p class="text-sm text-[#08080880]">View All</p>
             </div>
-            <div class="flex justify-between items-center mx-5 my-4 border-[#ddd] border-1 p-3 rounded-2xl">
+            <div class="flex justify-between items-center mx-5 my-4 border-[#ddd] border-1 p-3 rounded-2xl ">
                 <div class="flex justify-baseline items-center">
                     <img src="./assets/wallet1.png" class="mx-2 bg-[#0808080d] rounded-full p-2" alt="">
                     <div>
@@ -274,7 +274,7 @@
                 <span><i class="fa-solid fa-ellipsis-vertical text-[#080808b3]"></i></span>
             </div>
             
-        </section>
+        </section> -->
     </footer>
     <script src="main.js"></script>
 </body>
