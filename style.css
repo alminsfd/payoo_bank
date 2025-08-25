@@ -16,12 +16,12 @@ body{
     transform: scaleX(-1);
 }
 
-.chanbility:hover{
+.chanbility {
   background-color: rgba(8, 116, 242, 0.05);
   border-color: #0874F2;
 }
-
-.chanbility:hover p{
- color: #0874F2;
- font-weight: bold;
+.chanbility p {
+  color: #0874F2;
+  font-weight: bold;
 }
+

@@ -5,6 +5,7 @@ let transferMoneySection=document.getElementById("transfermoney-section")
 let getBonusSection=document.getElementById("getbonus-section")
 let payBillSection=document.getElementById("paybill-section")
 let transectionSection=document.getElementById("transecton-section")
+let footers=document.getElementsByClassName("changeable_footer")
 
 
 
@@ -15,7 +16,7 @@ let transferMoney=document.getElementById("transfermoney-btn")
 let getBonus=document.getElementById("getbonus-btn")
 let payBill=document.getElementById("paybill-btn")
 let transectionHistory=document.getElementById("transecton-btn")
-let footers=document.getElementsByClassName("changeable_footer")
+let changeable_btns=document.getElementsByClassName("changeable_btn")
 
 //toggling function
 function togglingsection(id){
@@ -51,6 +52,56 @@ transectionHistory.addEventListener("click",function(e){
     e.preventDefault(); 
     togglingsection("transecton-section");   
 });
+
+
+//btn color change function
+
+function btncolorchange(id){
+
+    for(let changeable_btn of changeable_btns){
+    changeable_btn.classList.remove("chanbility")
+  }
+    id.classList.add("chanbility")
+}
+
+addMoney.addEventListener("click",function(e){
+    e.preventDefault();
+    btncolorchange(addMoney)})
+
+cashoutMoney.addEventListener("click",function(e){
+    e.preventDefault();
+    btncolorchange(cashoutMoney)
+});
+transferMoney.addEventListener("click",function(e){
+    e.preventDefault();     
+    btncolorchange(transferMoney)
+});
+
+getBonus.addEventListener("click",function(e){
+    e.preventDefault();
+    btncolorchange(getBonus)
+});
+payBill.addEventListener("click",function(e){
+    e.preventDefault();
+    btncolorchange(payBill)
+});
+transectionHistory.addEventListener("click",function(e){    
+    e.preventDefault();
+    btncolorchange(transectionHistory)
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 // add money function       
 
 
@@ -87,6 +138,17 @@ transectionHistory.addEventListener("click",function(e){
 //     document.getElementById("pin").value=""
 //     document.getElementById("bank").value ="Select A Bank"
 // })
+
+
+
+
+
+
+
+
+
+
+
 // login out
 document.getElementById("log-out").addEventListener("click",function(){
     window.location.href="./index.html"
