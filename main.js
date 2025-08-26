@@ -143,6 +143,11 @@ function setmoney(value){
 // add money function
 addMoneybtn.addEventListener("click",function(e){
     e.preventDefault();
+    let bank=document.getElementById("bank").value
+    if(!bank){
+        alert("Selec a bank first")
+        return
+    }
     invalidValue("money-add")
     if(getinputvalue("pin")!==pinNumber){
         alert("Wrong Pin Number")
@@ -189,7 +194,6 @@ function moneylost(totalmoney){
         return true
     }
     return false
-    
 }
 
 function invalidValue(id){
@@ -209,12 +213,9 @@ castoutbtn.addEventListener("click",function(e){
     pinvalidation("cash-pin");
     digitvalidation("money-chori");
     const totalmoney=lastmoney()-getinputvalue("money-out")
-    if(moneylost(totalmoney))
+    if(moneylost(totalmoney)){
         return
-    // if(totalmoney<0){
-    //     alert("Insufficient balance")
-    //     return
-    // }
+    }
     setmoney(totalmoney)
     let data={
         type:"Cash Out",
@@ -267,6 +268,11 @@ getbonusbtn.addEventListener("click",function(e){
 //pay bill function
 paybillbtn.addEventListener("click",function(e){
     e.preventDefault();
+    let select=document.getElementById("select").value
+    if(!select){
+        alert("Please select the Bill type")
+        return
+    }
     invalidValue("money-pay")
     pinvalidation("pay-pin");
     digitvalidation("bill-give");
