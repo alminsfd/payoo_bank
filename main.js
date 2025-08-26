@@ -184,11 +184,11 @@ function digitvalidation(id){
 }
 
 function moneylost(totalmoney){
-    if(lastmoney()===0||totalmoney<0){
+    if(totalmoney<0){
         alert("Insufficient Balance")
-        // document.getElementById("span").innerText="0"
-        return
+        return true
     }
+    return false
     
 }
 
@@ -209,7 +209,12 @@ castoutbtn.addEventListener("click",function(e){
     pinvalidation("cash-pin");
     digitvalidation("money-chori");
     const totalmoney=lastmoney()-getinputvalue("money-out")
-    moneylost(totalmoney)
+    if(moneylost(totalmoney))
+        return
+    // if(totalmoney<0){
+    //     alert("Insufficient balance")
+    //     return
+    // }
     setmoney(totalmoney)
     let data={
         type:"Cash Out",
@@ -226,7 +231,9 @@ transferbtn.addEventListener("click",function(e){
     pinvalidation("trans-pin");
     digitvalidation("money-go");
     const totalmoney=lastmoney()-getinputvalue("money-transfer")
-    moneylost(totalmoney)
+    if(moneylost(totalmoney)){
+        return
+    }
     setmoney(totalmoney)
     let data={
         type:"Transfer Money",
@@ -264,7 +271,9 @@ paybillbtn.addEventListener("click",function(e){
     pinvalidation("pay-pin");
     digitvalidation("bill-give");
     const totalmoney=lastmoney()-getinputvalue("money-pay")
-    moneylost(totalmoney)
+    if(moneylost(totalmoney)){
+        return
+    }
     setmoney(totalmoney)
     let data={
         type:"Pay Bill",
