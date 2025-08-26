@@ -143,6 +143,7 @@ function setmoney(value){
 // add money function
 addMoneybtn.addEventListener("click",function(e){
     e.preventDefault();
+    invalidValue("money-add")
     if(getinputvalue("pin")!==pinNumber){
         alert("Wrong Pin Number")
         return
@@ -160,23 +161,55 @@ addMoneybtn.addEventListener("click",function(e){
     }
      transhistry.push(data)
      
-  document.getElementById("acount-number").value=""
-  document.getElementById("money-add").value=""
-  document.getElementById("pin").value=""
-  document.getElementById("bank").value ="Select A Bank"
+//   document.getElementById("acount-number").value=""
+//   document.getElementById("money-add").value=""
+//   document.getElementById("pin").value=""
+//   document.getElementById("bank").value ="Select A Bank"
 
 })
 //substruct money function
+function pinvalidation(id){
+if(getinputvalue(id)!==pinNumber){
+        alert("Wrong Pin Number")
+        return
+    }
+} 
 
+function digitvalidation(id){
+    let validationvalue=document.getElementById(id).value
+    if(validationvalue.length!=11){
+        alert("Invalid Account Number") 
+        return
+    }
+}
 
+function moneylost(totalmoney){
+    if(lastmoney()===0||totalmoney<0){
+        alert("Insufficient Balance")
+        // document.getElementById("span").innerText="0"
+        return
+    }
+    
+}
 
+function invalidValue(id){
+  let  valuer= parseInt(document.getElementById(id).value)
+  if(valuer<=0){
+    alert("Invalid Amount.")
+    return
+  }
+}
 
 
 // cashout money function
 
 castoutbtn.addEventListener("click",function(e){
     e.preventDefault();
+    invalidValue("money-out")
+    pinvalidation("cash-pin");
+    digitvalidation("money-chori");
     const totalmoney=lastmoney()-getinputvalue("money-out")
+    moneylost(totalmoney)
     setmoney(totalmoney)
     let data={
         type:"Cash Out",
@@ -189,7 +222,11 @@ castoutbtn.addEventListener("click",function(e){
 // transfer money function
 transferbtn.addEventListener("click",function(e){   
     e.preventDefault();
+    invalidValue("money-transfer")
+    pinvalidation("trans-pin");
+    digitvalidation("money-go");
     const totalmoney=lastmoney()-getinputvalue("money-transfer")
+    moneylost(totalmoney)
     setmoney(totalmoney)
     let data={
         type:"Transfer Money",
@@ -201,6 +238,8 @@ transferbtn.addEventListener("click",function(e){
 //get bonus function
 getbonusbtn.addEventListener("click",function(e){
     e.preventDefault();
+    pinvalidation("pay-pin");
+    digitvalidation("bill-give");
     const getcoupon=document.getElementById("get-bonus").value
     const couponindex=bonuscopens.indexOf(getcoupon)
     if(couponindex!==-1){
@@ -221,7 +260,11 @@ getbonusbtn.addEventListener("click",function(e){
 //pay bill function
 paybillbtn.addEventListener("click",function(e){
     e.preventDefault();
+    invalidValue("money-pay")
+    pinvalidation("pay-pin");
+    digitvalidation("bill-give");
     const totalmoney=lastmoney()-getinputvalue("money-pay")
+    moneylost(totalmoney)
     setmoney(totalmoney)
     let data={
         type:"Pay Bill",
@@ -230,46 +273,6 @@ paybillbtn.addEventListener("click",function(e){
     }
     transhistry.push(data)
 })
-
-
-
-
-
-
-
-
-// let addMoneybtn=document.getElementById("Mone-add")
-// addMoneybtn.addEventListener("click",function(e){
-//     e.preventDefault();
-//     let bankNumber=document.getElementById("acount-number").value
-//     let moneyAdd=parseInt(document.getElementById("money-add").value)
-//     let getpinNumber=parseInt(document.getElementById("pin").value)
-//     let lastMoney=parseInt(document.getElementById("span").innerText) 
-//     const pinNumber=847986;
-//     if(bankNumber.length!=11){
-//         alert("Invalid account number")
-//         return
-//     }
-//     if(getpinNumber!==pinNumber){
-//         alert("wrong pin")
-//     }
-//     let totalMoney=lastMoney+moneyAdd
-//     document.getElementById("span").innerText=totalMoney
-//     document.getElementById("acount-number").value=""
-//     document.getElementById("money-add").value=""
-//     document.getElementById("pin").value=""
-//     document.getElementById("bank").value ="Select A Bank"
-// })
-
-
-
-
-
-
-
-
-
-
 
 // login out
 document.getElementById("log-out").addEventListener("click",function(){

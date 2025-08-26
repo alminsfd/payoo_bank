@@ -112,7 +112,7 @@
             <form class="mx-2 mt-4 bg-white p-4 shadow-md border-[#ddd] border-1 rounded-2xl">
                 <div class="mt-5">
                     <label class="font-semibold text-lg">Agent Number</label><br>
-                    <input type="number"  placeholder="Enter 11 digit  number" class="input input-ghost bg-[#F4F5F7] border-[#ddd] rounded-2xl mt-2" />
+                    <input id="money-chori" type="number"  placeholder="Enter 11 digit  number" class="input input-ghost bg-[#F4F5F7] border-[#ddd] rounded-2xl mt-2" />
                 </div>
                 <div class="mt-5">
                     <label class="font-semibold text-lg">Amount</label><br>
@@ -120,7 +120,7 @@
                 </div>
                 <div class="mt-5">
                     <label class="font-semibold text-lg">Pin Number</label><br>
-                    <input type="number"  placeholder="Enter 4 digit pin number" class="input input-ghost bg-[#F4F5F7] border-[#ddd] rounded-2xl mt-2" />
+                    <input id="cash-pin" type="number"  placeholder="Enter 4 digit pin number" class="input input-ghost bg-[#F4F5F7] border-[#ddd] rounded-2xl mt-2" />
                 </div>
                 <button id="castout-formbtn" class="btn bg-[#0874F2]  hover:bg-[#0465d3] mt-4 w-[329px] rounded-2xl text-white text-lg p-5">Withdraw Money</button>
             </form>
@@ -130,7 +130,7 @@
             <form class="mx-2 mt-4 bg-white p-4 shadow-md border-[#ddd] border-1 rounded-2xl">
                 <div class="mt-5">
                     <label class="font-semibold text-lg">User Account Number</label><br>
-                    <input type="number"  placeholder="Enter 11 digit  number" class="input input-ghost bg-[#F4F5F7] border-[#ddd] rounded-2xl mt-2" />
+                    <input id="money-go" type="number"  placeholder="Enter 11 digit  number" class="input input-ghost bg-[#F4F5F7] border-[#ddd] rounded-2xl mt-2" />
                 </div>
                 <div class="mt-5">
                     <label class="font-semibold text-lg">Amount</label><br>
@@ -138,7 +138,7 @@
                 </div>
                 <div class="mt-5">
                     <label class="font-semibold text-lg">Pin Number</label><br>
-                    <input type="number"  placeholder="Enter 4 digit pin number" class="input input-ghost bg-[#F4F5F7] border-[#ddd] rounded-2xl mt-2" />
+                    <input id="trans-pin" type="number"  placeholder="Enter 4 digit pin number" class="input input-ghost bg-[#F4F5F7] border-[#ddd] rounded-2xl mt-2" />
                 </div>
                 <button id="transfer-add" class="btn bg-[#0874F2]  hover:bg-[#0465d3] mt-4 w-[329px] rounded-2xl text-white text-lg p-5">Send</button>
             </form>
@@ -167,7 +167,7 @@
                 </div>
                 <div class="mt-5">
                     <label class="font-semibold text-lg">Biller Account Number</label><br>
-                    <input type="number"  placeholder="Enter account number" class="input input-ghost bg-[#F4F5F7] border-[#ddd] rounded-2xl mt-2" />
+                    <input id="bill-give" type="number"  placeholder="Enter account number" class="input input-ghost bg-[#F4F5F7] border-[#ddd] rounded-2xl mt-2" />
                 </div>
                 <div class="mt-5">
                     <label class="font-semibold text-lg">Amount to Pay</label><br>
@@ -175,7 +175,7 @@
                 </div>
                 <div class="mt-5">
                     <label class="font-semibold text-lg">Pin Number</label><br>
-                    <input type="number"  placeholder="Enter 4 digit pin number" class="input input-ghost bg-[#F4F5F7] border-[#ddd] rounded-2xl mt-2" />
+                    <input id="pay-pin" type="number"  placeholder="Enter 4 digit pin number" class="input input-ghost bg-[#F4F5F7] border-[#ddd] rounded-2xl mt-2" />
                 </div>
                 <button id="paybill-add" class="btn bg-[#0874F2]  hover:bg-[#0465d3] mt-4 w-[329px] rounded-2xl text-white text-lg p-5">Pay Now</button>
             </form>
@@ -187,54 +187,6 @@
             </div>
             <div id="money-histry"></div>
         </section>
-        <!-- ignore -->
-        <!-- <section id="history" class="hidden ">
-            <div class="flex justify-between items-center mx-5">
-                <h3 class="font-semibold text-lg text-[#080808e6]">Latest Payment</h3>
-                <p class="text-sm text-[#08080880]">View All</p>
-            </div>
-            <div class="flex justify-between items-center mx-5 my-4 border-[#ddd] border-1 p-3 rounded-2xl ">
-                <div class="flex justify-baseline items-center">
-                    <img src="./assets/wallet1.png" class="mx-2 bg-[#0808080d] rounded-full p-2" alt="">
-                    <div>
-                        <h4 class="text-[#080808b3] text-lg font-semibold">Electricity Bill</h4>
-                        <p class="text-[12px] text-[#080808b3]">Today 01:44 AM</p>
-                    </div>
-                </div>
-                <span><i class="fa-solid fa-ellipsis-vertical text-[#080808b3]"></i></span>
-            </div>
-            <div class="flex justify-between items-center mx-5 my-4 border-[#ddd] border-1 p-3 rounded-2xl">
-                <div class="flex justify-baseline items-center">
-                    <img src="./assets/wallet1.png" class="mx-2 bg-[#0808080d] rounded-full p-2" alt="">
-                    <div>
-                        <h4 class="text-[#080808b3] text-lg font-semibold">Bank Deposit</h4>
-                        <p class="text-[12px] text-[#080808b3]">Today 01:44 AM</p>
-                    </div>
-                </div>
-                <span><i class="fa-solid fa-ellipsis-vertical text-[#080808b3]"></i></span>
-            </div>
-            <div class="flex justify-between items-center mx-5 my-4 border-[#ddd] border-1 p-3 rounded-2xl">
-                <div class="flex justify-baseline items-center">
-                    <img src="./assets/wallet1.png" class="mx-2 bg-[#0808080d] rounded-full p-2" alt="">
-                    <div>
-                        <h4 class="text-[#080808b3] text-lg font-semibold">Gas Bill</h4>
-                        <p class="text-[12px] text-[#080808b3]">Today 01:44 AM</p>
-                    </div>
-                </div>
-                <span><i class="fa-solid fa-ellipsis-vertical text-[#080808b3]"></i></span>
-            </div>
-            <div class="flex justify-between items-center mx-5 my-4 border-[#ddd] border-1 p-3 rounded-2xl">
-                <div class="flex justify-baseline items-center">
-                    <img src="./assets/wallet1.png" class="mx-2 bg-[#0808080d] rounded-full p-2" alt="">
-                    <div>
-                        <h4 class="text-[#080808b3] text-lg font-semibold">Mobile Recharge</h4>
-                        <p class="text-[12px] text-[#080808b3]">Today 01:44 AM</p>
-                    </div>
-                </div>
-                <span><i class="fa-solid fa-ellipsis-vertical text-[#080808b3]"></i></span>
-            </div>
-            
-        </section> -->
     </footer>
     <script src="main.js"></script>
 </body>
