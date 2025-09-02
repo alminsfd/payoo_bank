@@ -176,16 +176,19 @@ addMoneybtn.addEventListener("click",function(e){
 function pinvalidation(id){
 if(getinputvalue(id)!==pinNumber){
         alert("Wrong Pin Number")
-        return
+        return true
     }
+    return
 } 
 
 function digitvalidation(id){
     let validationvalue=document.getElementById(id).value
     if(validationvalue.length!=11){
         alert("Invalid Account Number") 
-        return
+        return true
     }
+
+    return false
 }
 
 function moneylost(totalmoney){
@@ -200,8 +203,10 @@ function invalidValue(id){
   let  valuer= parseInt(document.getElementById(id).value)
   if(valuer<=0){
     alert("Invalid Amount.")
-    return
+    return true
   }
+
+  return false
 }
 
 
@@ -209,9 +214,16 @@ function invalidValue(id){
 
 castoutbtn.addEventListener("click",function(e){
     e.preventDefault();
-    invalidValue("money-out")
-    pinvalidation("cash-pin");
-    digitvalidation("money-chori");
+    
+    if(invalidValue("money-out")){
+        return
+    }
+    if(pinvalidation("cash-pin")){
+        return
+    }
+    if(digitvalidation("money-chori")){
+        return
+    }
     const totalmoney=lastmoney()-getinputvalue("money-out")
     if(moneylost(totalmoney)){
         return
@@ -228,9 +240,15 @@ castoutbtn.addEventListener("click",function(e){
 // transfer money function
 transferbtn.addEventListener("click",function(e){   
     e.preventDefault();
-    invalidValue("money-transfer")
-    pinvalidation("trans-pin");
-    digitvalidation("money-go");
+    if(invalidValue("money-transfer")){
+        return
+    }
+    if(pinvalidation("trans-pin")){
+        return
+    }
+    if(digitvalidation("money-go")){
+        return
+    }
     const totalmoney=lastmoney()-getinputvalue("money-transfer")
     if(moneylost(totalmoney)){
         return
@@ -273,9 +291,15 @@ paybillbtn.addEventListener("click",function(e){
         alert("Please select the Bill type")
         return
     }
-    invalidValue("money-pay")
-    pinvalidation("pay-pin");
-    digitvalidation("bill-give");
+     if(invalidValue("money-pay")){
+        return
+    }
+    if(pinvalidation("pay-pin")){
+        return
+    }
+    if(digitvalidation("bill-give")){
+        return
+    }
     const totalmoney=lastmoney()-getinputvalue("money-pay")
     if(moneylost(totalmoney)){
         return
