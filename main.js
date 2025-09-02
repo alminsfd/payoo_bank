@@ -166,10 +166,7 @@ addMoneybtn.addEventListener("click",function(e){
     }
      transhistry.push(data)
      
-//   document.getElementById("acount-number").value=""
-//   document.getElementById("money-add").value=""
-//   document.getElementById("pin").value=""
-//   document.getElementById("bank").value ="Select A Bank"
+
 
 })
 //substruct money function
@@ -178,7 +175,7 @@ if(getinputvalue(id)!==pinNumber){
         alert("Wrong Pin Number")
         return true
     }
-    return
+    return false
 } 
 
 function digitvalidation(id){
